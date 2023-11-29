@@ -1,5 +1,5 @@
 {
-    "name": "react-file-viewer",
+    "name": "@yosser/react-file-viewer",
     "private": false,
     "version": "0.0.1",
     "type": "module",
@@ -37,5 +37,24 @@
         "sass": "^1.69.5",
         "typescript": "^5.2.2",
         "vite": "^5.0.0"
-    }
+    },
+    "description": "Extendable file viewer for web.",
+    "main": "dist/index.html",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/yosser/react-file-viewer.git"
+    },
+    "keywords": [
+        "react",
+        "file-viewer",
+        "jpg",
+        "pdv",
+        "csv"
+    ],
+    "author": "Steve Hughes",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/yosser/react-file-viewer/issues"
+    },
+    "homepage": "https://github.com/yosser/react-file-viewer#readme"
 }
