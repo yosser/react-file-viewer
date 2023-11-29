@@ -1,0 +1,41 @@
+{
+    "name": "rfv-vite",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "@xbim/viewer": "^2.1.0-pre202310171034",
+        "comma-separated-values": "^3.6.4",
+        "mammoth": "^1.6.0",
+        "react": "^18.2.0",
+        "react-data-grid": "^7.0.0-beta.41",
+        "react-dom": "^18.2.0",
+        "react-pdf": "^7.5.1",
+        "react-visibility-sensor": "^5.1.1",
+        "three": "^0.158.0",
+        "xlsx": "^0.18.5"
+    },
+    "devDependencies": {
+        "@types/pdfjs-dist": "^2.10.378",
+        "@types/react": "^18.2.37",
+        "@types/react-data-grid": "^4.0.12",
+        "@types/react-dom": "^18.2.15",
+        "@types/three": "^0.158.3",
+        "@typescript-eslint/eslint-plugin": "^6.10.0",
+        "@typescript-eslint/parser": "^6.10.0",
+        "@vitejs/plugin-react": "^4.2.0",
+        "eslint": "^8.53.0",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "eslint-plugin-react-refresh": "^0.4.4",
+        "faker": "5.5.3",
+        "sass": "^1.69.5",
+        "typescript": "^5.2.2",
+        "vite": "^5.0.0"
+    }
+}
