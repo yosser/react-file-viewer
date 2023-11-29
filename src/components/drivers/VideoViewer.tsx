@@ -15,7 +15,10 @@ export const VideoViewer: React.FunctionComponent<IVideoViewerProps> = (
     props
 ) => {
     const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<Error | null>(null);
+    const [error, setError] = useState<React.SyntheticEvent<
+        HTMLVideoElement,
+        Event
+    > | null>(null);
 
     return error ? (
         props.errorComponent

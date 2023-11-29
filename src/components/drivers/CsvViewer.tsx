@@ -48,9 +48,8 @@ export const CsvViewer: React.FunctionComponent<ICsvViewerProps> = (props) => {
     return rows.length > 0 && columns.length > 0 ? (
         <div className="pg-csv-viewer">
             <DataGrid
-                //@ts-expect-error
+                //@ts-expect-error - react-data-grid types are not up to date
                 columns={columns}
-                //@ts-expect-error
                 rows={rows}
                 minHeight={1000}
             />

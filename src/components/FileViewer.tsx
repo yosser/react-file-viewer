@@ -1,6 +1,6 @@
 // Copyright (c) 2017 PlanGrid, Inc.
 
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 
 import "../styles/main.scss";
 import { FetchWrapper } from "./FetchWrapper";

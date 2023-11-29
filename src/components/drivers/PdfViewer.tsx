@@ -61,7 +61,7 @@ export const PDFViewer: React.FunctionComponent<IPDFViewerProps> = (props) => {
                         });
                     });
                 })
-                .catch((e) => {
+                .catch(() => {
                     setLoading(false);
                 });
         };
@@ -109,9 +109,9 @@ export const PDFViewer: React.FunctionComponent<IPDFViewerProps> = (props) => {
                     >
                         <Page pageNumber={1} />
                     </Document>
-                ) : (
+                ) : loading ? (
                     <div className="pdf-loading">Loading ({percent}%)</div>
-                )}
+                ) : null}
             </div>
         </div>
     );
