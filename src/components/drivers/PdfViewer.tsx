@@ -4,12 +4,17 @@ import React, { useEffect, useRef, useState } from "react";
 
 import { Document, Page } from "react-pdf";
 
-import * as pdfjs from "pdfjs-dist";
+//import { Document, Page } from "react-pdf/dist/esm/entry.webpack5";
+//import "pdfjs-dist/build/pdf.worker";
+//import * as pdfjs from "pdfjs-dist/build/pdf.worker.js";
 
 import "../../styles/pdf-viewer.scss";
+//import "pdf.worker";
+//const src = new URL("pdfjs-dist/build/pdf.worker.js", import.meta.url);
 
-const src = new URL("pdfjs-dist/build/pdf.worker.js", import.meta.url);
-pdfjs.GlobalWorkerOptions.workerSrc = src.toString();
+//import * as pdfjs from "pdfjs-dist";
+//const src = new URL("pdfjs-dist/build/pdf.worker.js", import.meta.url);
+//pdfjs.GlobalWorkerOptions.workerSrc = src.toString();
 
 interface IPDFViewerProps {
     filePath: string;
@@ -35,6 +40,7 @@ const base64FromArraybuffer = async (data: Uint8Array) => {
 
 export const PDFViewer: React.FunctionComponent<IPDFViewerProps> = (props) => {
     const containerRef = useRef<HTMLDivElement>(null);
+    const hasLoaded = useRef<boolean>(false);
     const [containerWidth, setContainerWidth] = useState<number>(0);
     const [loading, setLoading] = useState<boolean>(false);
     const [pdf, setPdf] = useState<string>("");
@@ -65,7 +71,11 @@ export const PDFViewer: React.FunctionComponent<IPDFViewerProps> = (props) => {
                     setLoading(false);
                 });
         };
-        fetchPdf();
+        if (props.filePath && !hasLoaded.current) {
+            hasLoaded.current = true;
+            //     pdfjs.GlobalWorkerOptions.workerSrc = src.toString();
+            fetchPdf();
+        }
     }, [props.filePath]);
 
     const progressCallback = (progress: { loaded: number; total: number }) => {
